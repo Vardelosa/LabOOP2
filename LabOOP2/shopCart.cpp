@@ -17,6 +17,7 @@ void shopCart::showList(list <string> g)
 }
 void shopCart::AddToShopCard(string n)
 {
+	temp = n;
 list1.push_back(n);
 cout << "Товар добавлен в корзину!" << endl;
 }
@@ -42,7 +43,18 @@ void shopCart::showshopcard()
 				cout << "Нет продукта с таким номером";
 			else
 			{
-				list1.erase(n);
+				int i = 1;
+				list <string> ::iterator it;
+				for (it = list1.begin(); it != list1.end(); ++it)
+				{
+					if(i==n)
+					{
+						list1.remove(*it);
+						cout << "Товар удален из корзины." << endl;
+						break;
+					}
+					i++;
+				}
 			}
 		}
 		case 2:
