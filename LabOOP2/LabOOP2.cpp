@@ -19,22 +19,22 @@ int main()
 		{
 		case 1: // если count = 1
 		{
-			cout << "1";
+			menu1.Show(count);
 			break;
 		}
 		case 2: // если count = 2
 		{
-			cout << "2";
+			menu1.Show(count);
 			break;
 		}
 		case 3: // если count = 3
 		{
-			cout << "3";
+			menu1.Show(count);
 			break;
 		}
 		case 4: // если count = 4
 		{
-			cout << "4";
+			menu1.Show(count);
 			break;
 		}
 		default:
