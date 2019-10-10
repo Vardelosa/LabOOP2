@@ -15,19 +15,21 @@ void shopCart::showList(list <string> g)
 	}
 	cout << '\n';
 }
-void shopCart::AddToShopCard(string n)
+void shopCart::AddToShopCard(string product)
 {
-list1.push_back(n);
+list1.push_back(product);
 cout << "Товар добавлен в корзину!" << endl;
 }
-
-void shopCart::showshopcard()
+shopCart test;
+int testing_count = 0;
+void shopCart::shopCardMenu()
 {
-	if (list1.size() < 1)
+	if (testing_count == 0) { test = (*this); }
+	if (test.list1.size() < 1)
 		cout << "Корзина пуста." << endl;
 	else
 	{
-		showList(list1);
+		test.showList(test.list1);
 	}
 	cout << endl << endl << "1)Удалить товар из корзины"<< endl << "2)Купить еще что-то" <<endl;
 	int count;
@@ -38,11 +40,23 @@ void shopCart::showshopcard()
 		{
 			int n;
 			cout << "Введите номер продукта по списку: "; cin >> n;
-			if (n<0 && n>list1.size())
+			if (n<0 && n>test.list1.size())
 				cout << "Нет продукта с таким номером";
 			else
 			{
-				list1.erase(n);
+				int i = 1;
+				list <string> ::iterator it;
+				for (it = test.list1.begin(); it != test.list1.end(); ++it)
+				{
+					if (i == n)
+					{
+						test.list1.remove(*it);
+						cout << "Товар удален из корзины." << endl;
+						break;
+					}
+					i++;
+				}
+
 			}
 		}
 		case 2:
@@ -52,5 +66,14 @@ void shopCart::showshopcard()
 	default:
 		break;
 	}
-
+	testing_count++;
 }
+shopCart& shopCart::operator=(const shopCart& right)
+{
+	if (this == &right) {
+		return *this;
+	}
+	list1 = right.list1;
+	return *this;
+}
+

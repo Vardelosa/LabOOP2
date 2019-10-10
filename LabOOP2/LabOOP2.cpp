@@ -8,8 +8,8 @@ using namespace std;
 
 int main()
 {
-	
 	Menu menu1;
+	//Menu menu1(menu);//вызывается базовый конструктор копирования
 	setlocale(LC_ALL, "Russian");
 	int count; 
 	
@@ -49,7 +49,7 @@ int main()
 		{
 			system("cls");
 			cout << "Корзина: " << endl;
-			menu1.shopcart.showshopcard();
+			menu1.shopcart.shopCardMenu();
 			system("pause");
 			break;
 		}

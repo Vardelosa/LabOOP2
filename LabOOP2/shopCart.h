@@ -5,10 +5,14 @@
 #include <string>
 class shopCart
 {
+private:
+	std::list <std::string> list1;
+
 public:
 	void AddToShopCard(std::string n);
 	void showList(std::list <std::string> g);
-	void showshopcard();
-	std::list <std::string> list1;
+	void shopCardMenu();
+	shopCart& operator=(const shopCart& right);
+	
 };
 
