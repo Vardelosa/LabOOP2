@@ -1,6 +1,0 @@
-Normal gasoline: 12312
-Driver number: 1	Km:546	Gasoline:678	Sum:768	Remain gas: 11634
-Driver number: 2	Km:786	Gasoline:678	Sum:78	Remain gas: 11634
-Driver number: 3	Km:678	Gasoline:5	Sum:67	Remain gas: 12307
-Driver number: 4	Km:678	Gasoline:786	Sum:56	Remain gas: 11526
-Driver number: 5	Km:657	Gasoline:6	Sum:687	Remain gas: 12306

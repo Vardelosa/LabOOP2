@@ -8,11 +8,16 @@ using namespace std;
 
 int main()
 {
-	Menu menu1;
+	Menu menu;
+	Menu menu1(menu);
+	
 	//Menu menu1(menu);//вызывается базовый конструктор копирования
 	setlocale(LC_ALL, "Russian");
 	int count; 
-	
+	ofstream fout;
+	fout.open("file1.txt");
+	fout << "Меню ресторана *Аврора*" << endl;
+	fout << "1)Первые блюда" << endl << "2)Мясные блюда" << endl << "3)Гарниры" << endl << "4)Салаты" << endl;
 	do
 	{
 		system("cls");
@@ -62,6 +67,7 @@ int main()
 			break;
 		}
 	} while (count != 6);
+	fout.close();
 		return 0;
 }
 
