@@ -2,18 +2,25 @@
 #include "shopCart.h"
 #include <list> 
 #include <iterator>
+#include <fstream>
 #include <string>
 using namespace std;
+ofstream fout;
+
 void shopCart::showList(list <string> g)
-{
+{	
+	fout.open("file.txt");
+	fout << "Корзина: " << endl;
 	int i = 1;
 	list <string> ::iterator it;
 	for (it = g.begin(); it != g.end(); ++it)
 	{
 		cout << i << ")" << *it << endl;
+		fout << i << ")" << *it << endl;
 		i++;
 	}
 	cout << '\n';
+	fout.close();
 }
 void shopCart::AddToShopCard(string product)
 {

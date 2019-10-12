@@ -3,6 +3,7 @@
 #include <list> 
 #include <iterator>
 #include <string>
+#include <fstream>
 class shopCart
 {
 private:
@@ -13,6 +14,5 @@ public:
 	void showList(std::list <std::string> g);
 	void shopCardMenu();
 	shopCart& operator=(const shopCart& right);
-	
 };
 
